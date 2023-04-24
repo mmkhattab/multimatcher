@@ -1,0 +1,83 @@
+[
+  {
+    "whole_words_only": true,
+    "separator": " ",
+    "patterns": [
+      "one two three",
+      "one ",
+      "twoz",
+      "one two threez",
+      " two ",
+      "three",
+      "o",
+      "e",
+      "t"
+    ],
+    "test_cases": [
+      {
+        "input": "I want one, two, and three",
+        "expected_output": [
+          "three"
+        ]
+      },
+      {
+        "input": "give me one twoz three",
+        "expected_output": [
+          "twoz",
+          "three"
+        ]
+      },
+      {
+        "input": "o t e one two three",
+        "expected_output": [
+          "o",
+          "t",
+          "e",
+          "one two three"
+        ]
+      }
+    ]
+  },
+  {
+    "whole_words_only": false,
+    "separator": "",
+    "patterns": [
+      "two thr",
+      "one ",
+      "twoz",
+      "o",
+      "e",
+      "t"
+    ],
+    "test_cases": [
+      {
+        "input": "I want one two three",
+        "expected_output": [
+          "t",
+          "one ",
+          "two thr",
+          "e",
+          "e"
+        ]
+      },
+      {
+        "input": "count to twoz",
+        "expected_output": [
+          "o",
+          "t",
+          "t",
+          "o",
+          "twoz"
+        ]
+      },
+      {
+        "input": "toes",
+        "expected_output": [
+          "t",
+          "o",
+          "e"
+        ]
+      }
+    ]
+  }
+]

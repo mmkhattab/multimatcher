@@ -1,0 +1,48 @@
+[
+  {
+    "whole_words_only": true,
+    "separator": " ",
+    "patterns": [
+      "brown fox",
+      "the quick brown fox",
+      "the lazy dog",
+      "jumped over",
+      "the lazy"
+    ],
+    "test_cases": [
+      {
+        "input": "the quick brown fox jumped over the lazy dog.",
+        "expected_output": "<FOUND>the quick brown fox</FOUND> <FOUND>jumped over</FOUND> <FOUND>the lazy</FOUND> dog."
+      },
+      {
+        "input": "the quick brown foz jumped ovem the lazy dof.",
+        "expected_output": "the quick brown foz jumped ovem <FOUND>the lazy</FOUND> dof."
+      }
+    ]
+  },
+  {
+    "whole_words_only": false,
+    "separator": "",
+    "patterns": [
+      "brown fox",
+      "the quick brown fox",
+      "the lazy dog",
+      "jumped over",
+      "the lazy"
+    ],
+    "test_cases": [
+      {
+        "input": "the quick brown fox jumped over the lazy dog.",
+        "expected_output": "<FOUND>the quick brown fox</FOUND> <FOUND>jumped over</FOUND> <FOUND>the lazy dog</FOUND>."
+      },
+      {
+        "input": "the quick brown foxjumped overthe lazy dog.",
+        "expected_output": "<FOUND>the quick brown fox</FOUND><FOUND>jumped over</FOUND><FOUND>the lazy dog</FOUND>."
+      },
+      {
+        "input": "the quick brown fox hasn't jumped over",
+        "expected_output": "<FOUND>the quick brown fox</FOUND> hasn't <FOUND>jumped over</FOUND>"
+      }
+    ]
+  }
+]
