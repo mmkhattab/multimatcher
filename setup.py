@@ -1,3 +1,10 @@
-from setuptools import setup, find_packages
+from setuptools import setup
 
-setup(name='multimatching', version='0.0.1', packages=find_packages())
+setup(
+    name='multimatching',
+    version='0.0.1',
+    install_requires=[
+        'requests',
+        'importlib-metadata; python_version >= "3.8"',
+    ],
+)
