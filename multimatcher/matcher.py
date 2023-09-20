@@ -1,9 +1,9 @@
 from typing import Iterable, Dict, Callable, List
 
-from multimatching.match_mode import MatchMode
-from multimatching.trie import Trie
-from multimatching.match import Match
-from multimatching.replacer import SimpleReplacer, MapReplacer, TransformerReplacer
+from multimatcher.match_mode import MatchMode
+from multimatcher.trie import Trie
+from multimatcher.match import Match
+from multimatcher.replacer import SimpleReplacer, MapReplacer, TransformerReplacer
 
 
 class Multimatcher:
@@ -20,25 +20,25 @@ class Multimatcher:
         When possible, it's recommended to set whole_words_only to True, which makes matching significantly faster.
 
         Examples:
-            from multimatching import Multimatcher
+            from multimatcher import Multimatcher
             mm = Multimatcher(separator=' ')
             mm.set_replacement_text("") # matches will be deleted
             mm.set_search_patterns(['a', 'b', 'c'])
             mm.replace("x a y b z c") # produces "x y z"
 
-            from multimatching import Multimatcher
+            from multimatcher import Multimatcher
             mm = Multimatcher(separator=' ')
             mm.set_replacement_method(lambda x: x.capitalize()) # matches will be capitalized
             mm.set_search_patterns(['a', 'b', 'c'])
             mm.replace("x a y b z c") # produces "x A y B z C"
 
-            from multimatching import Multimatcher
+            from multimatcher import Multimatcher
             mm = Multimatcher(separator=' ')
             mm.set_replacement_text("0") # all matches will be replaced with 0
             mm.set_search_patterns(['a', 'b', 'c'])
             mm.replace("x a y b z c") # produces "x 0 y 0 z 0"
 
-            from multimatching import Multimatcher
+            from multimatcher import Multimatcher
             mm = Multimatcher(separator=' ')
             mm.set_replacement_map({"a": "1", "b": "2", "c": "3"}) # replaces a > 1, b > 2, c > 3
             mm.set_search_patterns(['a', 'b', 'c'])

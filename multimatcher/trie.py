@@ -1,6 +1,6 @@
 from typing import Callable, Iterable, List
 
-from multimatching.match import Match
+from multimatcher.match import Match
 from queue import Queue
 
 

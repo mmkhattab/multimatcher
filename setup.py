@@ -1,7 +1,7 @@
 from setuptools import setup
 
 setup(
-    name='multimatching',
+    name='multimatcher',
     version='0.0.1',
     install_requires=[
         'requests',

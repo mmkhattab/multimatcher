@@ -2,7 +2,7 @@ import unittest
 import json
 from pathlib import Path
 
-from multimatching import Multimatcher
+from multimatcher import Multimatcher
 
 
 class TestMultimatcherFind(unittest.TestCase):

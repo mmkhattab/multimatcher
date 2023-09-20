@@ -16,7 +16,7 @@ When possible, it's recommended to set whole_words_only to True, which makes mat
 # Examples
 ## Find and delete matches
 ```
-from multimatching import Multimatcher
+from multimatcher import Multimatcher
 mm = Multimatcher(separator=' ')
 mm.set_replacement_text("") # matches will be deleted
 mm.set_search_patterns(['a', 'b', 'c'])
@@ -24,7 +24,7 @@ mm.replace("x a y b z c") # produces "x y z"
 ```
 ## Find and transform matches
 ```
-from multimatching import Multimatcher
+from multimatcher import Multimatcher
 mm = Multimatcher(separator=' ')
 mm.set_replacement_method(lambda x: x.capitalize()) # matches will be capitalized
 mm.set_search_patterns(['a', 'b', 'c'])
@@ -32,7 +32,7 @@ mm.replace("x a y b z c") # produces "x A y B z C"
 ```
 ## Find and replace matches with the same label
 ```
-from multimatching import Multimatcher
+from multimatcher import Multimatcher
 mm = Multimatcher(separator=' ')
 mm.set_replacement_text("0") # all matches will be replaced with 0
 mm.set_search_patterns(['a', 'b', 'c'])
@@ -40,7 +40,7 @@ mm.replace("x a y b z c") # produces "x 0 y 0 z 0"
 ```
 ## Find and replace matches with custom labels
 ```
-from multimatching import Multimatcher
+from multimatcher import Multimatcher
 mm = Multimatcher(separator=' ')
 mm.set_replacement_map({"a": "1", "b": "2", "c": "3"}) # replaces a > 1, b > 2, c > 3
 mm.set_search_patterns(['a', 'b', 'c'])
