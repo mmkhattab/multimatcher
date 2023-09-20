@@ -4,6 +4,11 @@ from functools import partial
 
 
 def return_longest_non_overlapping(matches):
+    """
+        Return longest non-overlapping matches, from the input matches.
+    :param matches: A list of multimatcher.match.Match objects.
+    :return: A list of multimatcher.match.Match objects, with the longest non-overlapping matches.
+    """
     final_matches = OrderedDict()
     previous_end = -1
     for match in sorted(matches, key=lambda x: x.start_ix):
@@ -16,10 +21,20 @@ def return_longest_non_overlapping(matches):
 
 
 def return_all(matches):
+    """
+        Return all matches
+    :param matches:
+    :return: Return the list of input matches.
+    """
     return matches
 
 
 def return_first_non_overlapping(matches):
+    """
+        Return the first non-overlapping matches.
+    :param matches: A list of multimatcher.match.Match objects.
+    :return: A list of multimatcher.match.Match objects, with the first non-overlapping matches.
+    """
     final_matches = OrderedDict()
     previous_end = -1
     for match in sorted(matches, key=lambda x: x.start_ix):

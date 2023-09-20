@@ -1,1 +1,1 @@
-from matcher import Multimatcher
+from multimatcher.matcher import Multimatcher
