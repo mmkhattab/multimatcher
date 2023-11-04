@@ -191,3 +191,21 @@ class Multimatcher:
             previous_end = end_ix + len(self.separator)
         parts.append(string[previous_end:])
         return self.separator.join(p for p in parts if p)
+
+    def count(self, string: str, count_dict=None):
+        """Find and count matches in the input string.
+
+        :param string: The input string where matches are to be found and counted.
+        :param count_dict: The dictionary where the counts will be stored. If count_dict is None,
+        a new Python dict will be created.
+        :return: The count_dict. If count_dict is not None, it will be updated and returned.
+        """
+        if count_dict is None:
+            count_dict = {}
+        matches = self.find(string)
+        for match in matches:
+            text = match.string
+            if text not in count_dict:
+                count_dict[text] = 0
+            count_dict[text] += 1
+        return count_dict

@@ -1,0 +1,38 @@
+[
+  {
+    "whole_words_only": false,
+    "separator": "",
+    "patterns": [
+      "a",
+      "e",
+      "i",
+      "o",
+      "u"
+    ],
+    "test_cases": [
+      {
+        "input": "I want one, two, and three",
+        "expected_output": {
+          "a": 2,
+          "e": 3,
+          "o": 2
+        }
+      },
+      {
+        "input": "give me one twoz three",
+        "expected_output": {
+          "e": 4,
+          "i": 1,
+          "o": 2
+        }
+      },
+      {
+        "input": "o t e one two three",
+        "expected_output": {
+          "e": 4,
+          "o": 3
+        }
+      }
+    ]
+  }
+]
