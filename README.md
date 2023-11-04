@@ -10,6 +10,7 @@ the Multimatcher provides a flexible "replace" method that allows different use 
 - find and replace
 - tag with a global label (i.e. all matches get the same label)
 - tag with custom label (i.e. each match gets its own label)
+- count matches
 
 When possible, it's recommended to set whole_words_only to True, which makes matching significantly faster.
 
@@ -47,6 +48,13 @@ mm.set_search_patterns(['a', 'b', 'c'])
 mm.replace("x a y b z c") # produces "x 1 y 2 z 3"
 ```
 
+## Find and replace matches with custom labels
+```
+from multimatcher import Multimatcher
+mm = Multimatcher(separator='')
+mm.set_search_patterns(['a', 'b', 'c'])
+mm.count("aa xx bb yy cc zz") # produces {'a': 2, 'b': 2, 'c': 2}
+```
 # References
 Aho, A. V., & Corasick, M. J. (1975). Efficient string matching: an aid to bibliographic search.
 Communications of the ACM, 18(6), 333-340.

@@ -17,6 +17,7 @@ class Multimatcher:
             - find and replace
             - tag with a global label (i.e. all matches get the same label)
             - tag with custom label (i.e. each match gets its own label)
+            - count matches
         When possible, it's recommended to set whole_words_only to True, which makes matching significantly faster.
 
         Examples:
@@ -43,6 +44,11 @@ class Multimatcher:
             mm.set_replacement_map({"a": "1", "b": "2", "c": "3"}) # replaces a > 1, b > 2, c > 3
             mm.set_search_patterns(['a', 'b', 'c'])
             mm.replace("x a y b z c") # produces "x 1 y 2 z 3"
+
+            from multimatcher import Multimatcher
+            mm = Multimatcher(separator='')
+            mm.set_search_patterns(['a', 'b', 'c'])
+            mm.count("aa xx bb yy cc zz") # produces {'a': 2, 'b': 2, 'c': 2}
 
 
         References:
